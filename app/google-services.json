@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "155221480844",
+    "project_id": "donshy-47b28",
+    "storage_bucket": "donshy-47b28.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155221480844:android:c3db0caca270a48fa132a9",
+        "android_client_info": {
+          "package_name": "com.example.donshy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIitkUid3iT_2Yx-4WbqRbkBYowPW_kzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
