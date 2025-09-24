@@ -23,7 +23,6 @@ class SignUpRepository(private val auth: FirebaseAuth, private val dispatcher: C
                     email = firebaseUser.email ?: "",
                     isEmailVerified = firebaseUser.isEmailVerified
                 )
-                auth.signOut()
                 Result.Success(response)
             } else {
                 Result.Error("")

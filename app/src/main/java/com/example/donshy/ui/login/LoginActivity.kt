@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.donshy.R
 import com.example.donshy.databinding.ActivityLoginBinding
+import com.google.firebase.FirebaseApp
 
 class LoginActivity : AppCompatActivity() {
 
@@ -14,11 +15,5 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Only add fragment if first launch
-//        if (savedInstanceState == null) {
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainer, LoginFragment())
-//                .commit()
-//        }
     }
 }

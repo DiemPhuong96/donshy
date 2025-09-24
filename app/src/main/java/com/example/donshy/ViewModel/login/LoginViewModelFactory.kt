@@ -1,4 +1,4 @@
-package com.example.donshy.ui.login
+package com.example.donshy.ViewModel.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

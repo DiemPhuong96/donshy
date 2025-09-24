@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import com.example.donshy.databinding.SplashActivityBinding
+import com.example.donshy.ui.MainActivity
 import com.example.donshy.ui.login.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : ComponentActivity() {
     private lateinit var binding: SplashActivityBinding
@@ -22,7 +24,12 @@ class SplashActivity : ComponentActivity() {
             }
 
             override fun onAnimationEnd(p0: Animator) {
-                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                val currentUser = FirebaseAuth.getInstance().currentUser
+                if (currentUser == null) {
+                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                } else {
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                }
                 finish()
             }
 
