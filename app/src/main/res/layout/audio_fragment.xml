@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- RecyclerView fills space above controller -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_audio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraint_controller"
+        tools:listitem="@layout/audio_item"
+        android:layout_marginBottom="200dp"
+        tools:itemCount="20" />
+
+    <!-- Controller pinned to bottom -->
+    <LinearLayout
+        android:id="@+id/constraint_controller"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@android:color/darker_gray"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Top row: previous, pause, next -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_previous"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icon_previous" />
+
+            <ImageView
+                android:id="@+id/img_pause"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="32dp"
+                android:src="@drawable/icon_pause" />
+
+            <ImageView
+                android:id="@+id/img_next"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icon_next" />
+        </LinearLayout>
+
+        <!-- Seek bar below buttons -->
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

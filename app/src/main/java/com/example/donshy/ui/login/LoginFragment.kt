@@ -15,14 +15,15 @@ import com.example.donshy.R
 import com.example.donshy.databinding.LoginFragmentBinding
 import com.example.donshy.ui.MainActivity
 import com.example.donshy.utils.Result
-import android.graphics.Color
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import androidx.core.content.ContextCompat
+import com.example.donshy.ViewModel.login.LoginViewModel
+import com.example.donshy.ViewModel.login.LoginViewModelFactory
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
+internal const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**

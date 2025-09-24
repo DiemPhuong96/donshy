@@ -5,7 +5,7 @@
     <string name="sign_up_fragment_label">Sign up Fragment</string>
     <string name="login_fragment_label">Login Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="save">Save</string>
 
     <string name="start_learning">Let\'s start learning</string>
     <string name="sign_up">Sign Up</string>
@@ -37,4 +37,21 @@
     <!-- Login -->
     <string name="login">Login</string>
     <string name="do_not_have_account">You do not have an account yet? <u>Sign up now</u></string>
+    <!--Home -->
+    <string name="input_your_words">Input your words</string>
+    <string name="input_the_meaning">Input it\'s meaning</string>
+    <string name="error_add_words">Cannot add word</string>
+    <!--tab layout-->
+    <string name="tab_home">Home</string>
+    <string name="tab_listening">Listening</string>
+    <string name="tab_profile">Listening</string>
+    <string name="logout">Log Out</string>
+    <string name="input_sentences">Please input words or sentences!</string>
+    <string name="translate">Translate</string>
+    <!--profile-->
+    <string name="avatar">avatar</string>
+    <string name="choose_from_gallery">Choose avatar from your Gallery</string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="select_avatar">Select Avatar</string>
+    <string name="icon_change">icon_change</string>
 </resources>

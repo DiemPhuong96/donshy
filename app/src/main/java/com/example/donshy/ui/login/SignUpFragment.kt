@@ -15,9 +15,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.donshy.R
+import com.example.donshy.ViewModel.login.AuthViewModelFactory
+import com.example.donshy.ViewModel.login.SignUpViewModel
 import com.example.donshy.databinding.SignUpFragmentBinding
 import com.example.donshy.ui.MainActivity
 import com.example.donshy.utils.Result
+import com.google.firebase.auth.FirebaseAuth
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -111,6 +114,7 @@ class SignUpFragment : Fragment() {
         }
         viewModel.emailVerified.observe(requireActivity()) {verified ->
             if (verified) {
+                FirebaseAuth.getInstance().signOut()
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()

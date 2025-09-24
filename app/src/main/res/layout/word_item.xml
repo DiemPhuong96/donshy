@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingHorizontal="16dp">
+    <TextView
+        android:id="@+id/txtWord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Heading_2"
+        android:textColor="@color/black_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_speaker"
+        tools:text="Hello"/>
+
+    <TextView
+        android:id="@+id/txtMeaning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Heading_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWord"
+        app:layout_constraintEnd_toStartOf="@id/img_speaker"
+        android:layout_marginTop="8dp"
+        tools:text="Hello"/>
+    <ImageView
+        android:id="@+id/img_speaker"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/icon_mute"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/txtMeaning"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
