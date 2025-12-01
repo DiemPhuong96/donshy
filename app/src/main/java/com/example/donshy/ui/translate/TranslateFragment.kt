@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.donshy.ViewModel.BaseViewModelFactory
 import com.example.donshy.ViewModel.translate.TranslateViewModel
-import com.example.donshy.ViewModel.translate.TranslateViewModelFactory
 import com.example.donshy.data.model.LanguageProvider
+import com.example.donshy.data.repository.TranslateRepository
 import com.example.donshy.databinding.TranslateFragmentBinding
 import com.example.donshy.utils.Result
 
@@ -20,8 +21,11 @@ class TranslateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val repository = TranslateRepository()
         val viewModel =
-            ViewModelProvider(this, TranslateViewModelFactory())[TranslateViewModel::class.java]
+            ViewModelProvider(
+                this,
+                BaseViewModelFactory { TranslateViewModel(repository) })[TranslateViewModel::class.java]
         val languages = LanguageProvider.getSupportedLanguages()
         val adapter = ArrayAdapter(
             requireContext(),
