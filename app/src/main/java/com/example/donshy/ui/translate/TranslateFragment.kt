@@ -20,8 +20,7 @@ class TranslateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val viewModel =
-            ViewModelProvider(this, TranslateViewModelFactory())[TranslateViewModel::class.java]
+        val viewModel = ViewModelProvider(this, TranslateViewModelFactory())
         val languages = LanguageProvider.getSupportedLanguages()
         val adapter = ArrayAdapter(
             requireContext(),
