@@ -7,21 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.donshy.ViewModel.home.HomeViewModel
-import com.example.donshy.ViewModel.home.HomeViewModelFactory
 import com.example.donshy.databinding.HomeFragmentBinding
 import com.example.donshy.utils.Result
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
-/**
- * A simple [androidx.fragment.app.Fragment] subclass as the second destination in the navigation.
- */
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: HomeFragmentBinding? = null
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: HomeViewModel by viewModels()
     private lateinit var wordAdapter: WordAdapter
     private lateinit var tts: TextToSpeech
 
@@ -51,7 +50,6 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "TTS initialization failed", Toast.LENGTH_SHORT).show()
             }
         }
-        viewModel = ViewModelProvider(this, HomeViewModelFactory())[HomeViewModel::class]
         wordAdapter = WordAdapter(emptyList(), tts)
         binding.rcWords.adapter = wordAdapter
         binding.rcWords.layoutManager = LinearLayoutManager(requireContext())
