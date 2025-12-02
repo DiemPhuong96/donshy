@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.donshy.data.model.Audio
 import com.example.donshy.data.repository.AudioRepository
-
-class AudioViewModel(private val repository: AudioRepository) : ViewModel() {
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class AudioViewModel @Inject constructor(private val repository: AudioRepository) : ViewModel() {
     private val _audioPath = MutableLiveData<List<Audio>>()
     val audioPath: LiveData<List<Audio>> get() = _audioPath
     fun loadAudio(type: String, fileName: String) {

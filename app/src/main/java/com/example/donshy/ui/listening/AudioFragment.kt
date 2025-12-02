@@ -5,18 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.donshy.ViewModel.audio.AudioViewModel
-import com.example.donshy.ViewModel.audio.AudioViewModelFactory
 import com.example.donshy.data.model.AudioType
 import com.example.donshy.databinding.AudioFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AudioFragment() : Fragment() {
     private var _binding: AudioFragmentBinding? = null
-    private lateinit var viewModel: AudioViewModel
+    private val viewModel: AudioViewModel by viewModels()
     private lateinit var adapter: AudioAdapter
     val binding get() = _binding!!
     private lateinit var player: ExoPlayer
@@ -35,7 +37,6 @@ class AudioFragment() : Fragment() {
         arguments?.let {
             audioType = it.getString(AUDIO_TYPE, AudioType.TOEIC.type)
         }
-        viewModel = ViewModelProvider(this, AudioViewModelFactory(requireContext()))[AudioViewModel::class]
         viewModel.loadAllAudio(audioType)
         player = ExoPlayer.Builder(requireActivity()).build()
         adapter = AudioAdapter(

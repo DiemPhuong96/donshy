@@ -9,7 +9,9 @@ import com.example.donshy.ui.listening.ListeningFragment
 import com.example.donshy.ui.profile.ProfileFragment
 import com.example.donshy.ui.translate.TranslateFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
