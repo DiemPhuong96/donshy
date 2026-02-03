@@ -760,3 +760,5 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
 - [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
 - [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
 - [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
+
+- commit 1
