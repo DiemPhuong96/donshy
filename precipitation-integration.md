@@ -705,13 +705,8 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
   margin-bottom: 12px;
 }
 
-.main-value .value {
-  font-size: 48px;
-  font-weight: bold;
-}
-
 .main-value .unit {
-  font-size: 18px;
+  font-size: 10px;
   color: #888;
 }
 
@@ -775,4 +770,8 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
 ## 7. Tài liệu tham khảo
 
 - [JMA AMeDAS Official](https://www.jma.go.jp/bosai/amedas/)
+- [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
+- [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
+- [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
+- [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
 - [AMeDAS System Overview](https://www.jma.go.jp/jma/kishou/know/amedas/kaisetsu.html)
