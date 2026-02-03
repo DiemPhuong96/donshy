@@ -602,13 +602,6 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
   const level = station.level || getPrecipitationLevel(precip.mm1h);
 
   return (
-    <div className="chart-panel">
-      {/* Header */}
-      <div className="header">
-        <h3>☔ {station.name}</h3>
-        <span>{station.nameEn} • AMeDAS観測所</span>
-        <button onClick={onClose}>×</button>
-      </div>
 
       {/* Current Values */}
       <div className="current-section">
