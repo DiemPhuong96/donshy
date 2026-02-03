@@ -705,13 +705,8 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
   margin-bottom: 12px;
 }
 
-.main-value .value {
-  font-size: 48px;
-  font-weight: bold;
-}
-
 .main-value .unit {
-  font-size: 18px;
+  font-size: 10px;
   color: #888;
 }
 
@@ -756,18 +751,6 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
 }
 ```
 
----
-
-## 6. Lưu ý khi tích hợp
-
-1. **API không chính thức**: Có thể thay đổi không báo trước
-2. **Cache data**: Nên cache 5-10 phút vì data cập nhật mỗi 10 phút
-3. **CORS**: API này thường không bị chặn CORS từ browser
-4. **Validate coordinates**: Luôn kiểm tra tọa độ hợp lệ (Japan: lat 20-50, lon 120-155)
-5. **Handle null values**: Một số trạm có thể không có đủ dữ liệu
-6. **Dữ liệu lịch sử**: API chỉ giữ dữ liệu 10 ngày gần nhất
-
----
 
 ## 7. Tài liệu tham khảo
 
