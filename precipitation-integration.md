@@ -766,6 +766,9 @@ const PrecipitationChartPanel = ({ station, onClose }) => {
 4. **Validate coordinates**: Luôn kiểm tra tọa độ hợp lệ (Japan: lat 20-50, lon 120-155)
 5. **Handle null values**: Một số trạm có thể không có đủ dữ liệu
 6. **Dữ liệu lịch sử**: API chỉ giữ dữ liệu 10 ngày gần nhất
+7. **Validate coordinates**: Luôn kiểm tra tọa độ hợp lệ (Japan: lat 20-50, lon 120-155)
+8. **Handle null values**: Một số trạm có thể không có đủ dữ liệu
+
 
 ---
 
