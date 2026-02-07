@@ -43,15 +43,6 @@ CREATE TABLE IF NOT EXISTS wind
    created_at TIMESTAMPTZ DEFAULT now()
 );
 
-CREATE TABLE IF NOT EXISTS wind
-(
-   station_id TEXT NOT NULL,
-   observed_at TIMESTAMPTZ NOT NULL,
-   wind_direction INTEGER,
-   wind_speed DOUBLE PRECISION,
-   created_at TIMESTAMPTZ DEFAULT now()
-);
-
 -- Convert to hypertables (if TimescaleDB available)
 SELECT create_hypertable('precipitation', 'observed_at', if_not_exists => TRUE);
 SELECT create_hypertable('wind', 'observed_at', if_not_exists => TRUE);
