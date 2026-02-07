@@ -1,0 +1,49 @@
+-- Enable TimescaleDB extension
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+
+-- Create table: stations
+CREATE TABLE IF NOT EXISTS stations
+(
+   station_id TEXT PRIMARY KEY,
+   type TEXT,
+   elems TEXT,
+   lat DOUBLE PRECISION,
+   lon DOUBLE PRECISION,
+   alt INTEGER,
+   kj_name TEXT,
+   kn_name TEXT,
+   en_name TEXT,
+   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+   created_by TEXT NOT NULL,
+   updated_at TIMESTAMPTZ DEFAULT NULL,
+   updated_by TEXT DEFAULT NULL,
+   is_deleted BOOLEAN NOT NULL DEFAULT false
+);
+
+-- Create table: precipitation
+CREATE TABLE IF NOT EXISTS precipitation
+(
+   station_id TEXT NOT NULL,
+   observed_at TIMESTAMPTZ NOT NULL,
+   precipitation_10m DOUBLE PRECISION,
+   precipitation_1h DOUBLE PRECISION,
+   precipitation_3h DOUBLE PRECISION,
+   precipitation_24h DOUBLE PRECISION,
+   created_at TIMESTAMPTZ DEFAULT now(),
+   PRIMARY KEY (station_id, observed_at)
+);
+
+-- Create table: wind
+CREATE TABLE IF NOT EXISTS wind
+(
+   station_id TEXT NOT NULL,
+   observed_at TIMESTAMPTZ NOT NULL,
+   wind_direction INTEGER,
+   wind_speed DOUBLE PRECISION,
+   created_at TIMESTAMPTZ DEFAULT now(),
+   PRIMARY KEY (station_id, observed_at)
+);
+
+-- Convert to hypertables (if TimescaleDB available)
+SELECT create_hypertable('precipitation', 'observed_at', if_not_exists => TRUE);
+SELECT create_hypertable('wind', 'observed_at', if_not_exists => TRUE);
