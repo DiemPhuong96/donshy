@@ -45,4 +45,4 @@ CREATE TABLE IF NOT EXISTS wind
 
 -- Convert to hypertables (if TimescaleDB available)
 SELECT create_hypertable('precipitation', 'observed_at', if_not_exists => TRUE);
-SELECT create_hypertable('wind', 'observed_at', if_not_exists => TRUE);
+SELECT create_hypertable('wind', 'observed_at', if_not_exists => FALSE);
