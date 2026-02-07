@@ -13,14 +13,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/constraint_controller"
+        app:layout_constraintBottom_toTopOf="@+id/ln_controller"
         tools:listitem="@layout/audio_item"
         android:layout_marginBottom="200dp"
         tools:itemCount="20" />
 
     <!-- Controller pinned to bottom -->
     <LinearLayout
-        android:id="@+id/constraint_controller"
+        android:id="@+id/ln_controller"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:orientation="vertical"
@@ -28,7 +28,9 @@
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible">
 
         <!-- Top row: previous, pause, next -->
         <LinearLayout
